@@ -6,6 +6,10 @@ interface CreditCard {
 
 interface Bank extends CreditCard{ //--Interface can inherit another interface
     double getRateOfInterest();
+    default void test(){
+        System.out.println("hi");
+    }
+    //works for Java 8 and above.
 }
 
 //--Can extend ONE class, but as many interfaces as you'd like

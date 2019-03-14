@@ -1,20 +1,17 @@
 package com.revCollections;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Stack;
+import java.util.*;
 
 /**
  * Hello world!
  *
  */
-public class App 
-{
-    public static void main( String[] args )
+public class App {
+    public static void main(String[] args)
     {
-        CreateArrayList();
-        //--ctrl + . Will allow you to import packages
+        
     }
+        //--ctrl + . Will allow you to import packages}
         static void CreateArrayList(){
             ArrayList<String> ar=new ArrayList<>();
             ar.add("Pushpinder");
@@ -28,11 +25,22 @@ public class App
             }
             System.out.println("Size:"+ar.size());
             System.out.println("Second Element"+ar.get(1));
-    }
-    static void CreateStack(){
+        }
+     static void CreateStack(){
         Stack<String> stack=new Stack<>();
         stack.push("Pushpinder");
         stack.push("Kaur");
         System.out.println(stack.peek());
+     }
+    static void CreateSet(){
+        Hashtable<Integer,String> emp=new Hashtable<Integer,String>();
+        emp.put(1, "Carol Baxtor");
+        emp.put(2, "Megan");
+        emp.put(3, "Dylan");
+        emp.put(4,"Felix");
+        for (Integer key: emp.keySet()) {
+            System.out.println("Emp"+emp.get(key));
+        }
     }
+
 }

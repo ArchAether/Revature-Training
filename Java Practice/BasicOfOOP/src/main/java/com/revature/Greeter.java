@@ -20,10 +20,18 @@ class Greeter{
         this.name = n; //   If you don't use this. keyword, then there is an ambiquity 
     }
 }
+// address class---
+class Address{
+    String addressLine1;
+    String addressLine2;
+    String city;
+    String zipcode, state, country = "US";
+}
 
 abstract class Person{
     String name;
     String ssn;
+    Address address; //--HAS-A relationship
     final String SPECIEID = "HOMOSAPIENS";
     public Person(String name, String ssn){
         this.name = name;

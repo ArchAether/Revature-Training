@@ -18,11 +18,14 @@ public class App
         //Person p=new Person("Stephen Lo", "lsdijfsd");
         //System.out.println(p.getDetails());
 
-        Employee emp=new Employee("Java Boi", "3ewr23", 3220.00); // Upcasting
+        //Employee emp=new Employee("Java Boi", "3ewr23", 3220.00); // Upcasting
         
         //Person emp1=new Person("Java Boi", "3ewr23"); // Downcasting
-        Employee emp2=(Employee)emp;
+        //Employee emp2=(Employee)emp;
 
-        System.out.println(emp2.getDetails());
+        //System.out.println(emp2.getDetails());
+
+        Assignment dog = new Assignment();
+        dog.computation();
     }
 }

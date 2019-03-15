@@ -14,7 +14,7 @@ class RecipeReader {
         List<String> ingredList = new ArrayList<>();
         // FileInputStream in = null;//Declare inputStream (safely)
 
-        try (FileInputStream in = new FileInputStream("recipe.txt")) {
+        try (FileInputStream in = new FileInputStream("C:\\Java\\Git\\Revature-Training\\Java Practice\\IOPractice\\recipeReader\\src\\main\\java\\com\\revatureKitchen\\recipe.txt")) {
             // in = new FileInputStream("recipe.txt"); //open the InputStream
 
             int i = 0;

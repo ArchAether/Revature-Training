@@ -3,6 +3,7 @@ package com.revatureKitchen;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -14,14 +15,19 @@ class RecipeReader {
         List<String> ingredList = new ArrayList<>();
         // FileInputStream in = null;//Declare inputStream (safely)
 
-        try (FileInputStream in = new FileInputStream("C:\\Java\\Git\\Revature-Training\\Java Practice\\IOPractice\\recipeReader\\src\\main\\java\\com\\revatureKitchen\\recipe.txt")) {
+        try (FileReader in = new FileReader("C:\\Java\\Git\\Revature-Training\\Java Practice\\IOPractice\\recipeReader\\src\\main\\java\\com\\revatureKitchen\\recipe.txt")) {
             // in = new FileInputStream("recipe.txt"); //open the InputStream
-
+            
+            byte[] input = new byte[4];
             int i = 0;
-            while (in.read() != -1) { // Write to ingredList
-                ingredList.add(i, in.toString());
+            char loltest[] = new char[100];
+            while (( i =in.read()) != -1) { // Write to ingredList
+                // Byte byte0 = in.read();
+                in.read(loltest);
+                
+                //ingredList.add(i, in.read());
             }
-            for (String element : ingredList) {
+            for (char element : loltest) {
                 System.out.println(element); // print to console
             }
 

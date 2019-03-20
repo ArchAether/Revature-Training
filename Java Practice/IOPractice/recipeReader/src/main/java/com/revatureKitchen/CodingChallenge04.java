@@ -32,15 +32,17 @@ class CodingChallengeJava{
         wordChanger = wordChanger.reverse();        //Reverse String
         String reversedString = wordChanger.toString(); //Reversed word back to string*/
         
-        int stringLength = wordList.get(i).length(); // length of string
-        char[stringLength] charArray;                           //new char array
+        int x = wordList.get(i).length(); // length of string
+        char charArray[x];                           //new char array
 
-        for (int k = stringLength; k > 0; k--) {    //reverse string
+        for (int k = 0; k < x; k++) {    //reverse string
+            char letter = wordList.get(i).charAt(x - k);
             
+            charArray[k] = letter;
         }
         
-        if(reversedString == wordList.get(i)){
-            palindromeList.add(reversedString);
+        if(charArray == wordList.get(i).toCharArray()){
+            palindromeList.add(charArray.toString());
         }
     }
     //Check if palindrome

@@ -1,0 +1,26 @@
+container is where the application is stored.
+.war 
+1. client sends http request
+
+2. Server recieves request. Generates ServletRequest, ServletResponse (Java objects)
+
+3. Servlet container uses deployment descriptor to map request to appropriate servlet.
+	- deployment descriptor tells how to deploy to web
+
+4. Container instantiates the servlet. //Servlet lifecycle
+
+5. container calls servlets init() method to set any parameters specifiesd in the D.D
+	(Deployment Descriptor)
+
+6. Container calls servlet's service() method to processs the request, 
+		which invockes a request handler method
+
+7. HTTPREsponse is retuned by servlet to server and then to client.
+	- 6 and 7 continue untill it dies. see 8. lol
+
+8. each successes request to sersver which maps to this servlet invokes service()
+
+9. Container calls servlet's destroy() method. (releasing instance to save memory, 
+active period for servlet has elapsed, or container could be shutting down)
+
+use a Java logger that can log errors.

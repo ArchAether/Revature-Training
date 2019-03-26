@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+  <display-name>servlets-intro</display-name>
+  
+  <!-- 
+  
+   -->
+   <context-param>
+   		<param-name>environmentVar</param-name>
+   		<param-value>dummy data - this is an example of servlet context</param-value>
+   </context-param>
+   
+   <servlet>
+   <servlet-name>FirstServlet</servlet-name>
+   <servlet-class>com.revature.servlet.HelloServlet</servlet-class>
+   <!-- Servlet CONFIG: parameters -->
+   <init-param>
+   		<param-name>helloConfig</param-name>
+   		<param-value>Servlet Specific parameter -- servlet config</param-value>
+   </init-param>
+   <load-on-startup>1</load-on-startup> 	<!-- Takes a number; should be last; *optional -->
+   </servlet>
+   
+   <servlet-mapping>
+   		<servlet-name>FirstServlet</servlet-name>
+   		<url-pattern>/hello</url-pattern>
+   </servlet-mapping>
+   
+   <servlet>
+   <servlet-name>MyHttpServlet</servlet-name>
+   <servlet-class>com.revature.servlet.MyHttpServlet</servlet-class>
+   </servlet>
+   
+   <servlet-mapping>
+   <servlet-name>MyHttpServlet</servlet-name>
+   <url-pattern>/http</url-pattern>
+   </servlet-mapping>
+   
+</web-app>

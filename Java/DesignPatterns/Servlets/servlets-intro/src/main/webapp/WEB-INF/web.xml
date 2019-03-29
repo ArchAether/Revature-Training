@@ -33,7 +33,7 @@
    
    <servlet-mapping>
    <servlet-name>MyHttpServlet</servlet-name>
-   <url-pattern>/http</url-pattern>
+   <url-pattern>/httpReq</url-pattern>
    </servlet-mapping>
    
 </web-app>

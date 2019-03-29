@@ -1,0 +1,51 @@
+<h4>Data Binding</h4>
+<i>Angular supports data binding, which is a mechanism for
+  coordinating parts of a template(HTML) with parts of a 
+  component(TS)
+</i>
+<br>
+<p>Threa are a few different types of data binding</p>
+<h5>String Interpolation</h5>
+String Interpolation uses double curly braces to display data represented in the components.ts
+or to evaluate expressions. there are many things we can do with this, however it does have some
+restrictions, such as we cannot create new objects in template expressinons.
+<br>
+Examples:
+<ul>
+  <li>Math: 2+2 = {{2+2}}</li>
+  <li>Expressions:
+    {{10>2? 'yes': 'no'}}
+  </li>
+  <li>My name is {{name}}</li>
+  <li>Time: {{time.toLocaleTimeString()}}</li>
+  <li>Time: {{time | date: 'medium'}}</li>
+  <li>Explore Money Pipe, 1000000 dollars => {{1000000|currency}}</li>
+  <li>Phone number: {{0006676667}}</li>
+  <li>Custom SQROOT pipe: {{100|sqroot}}</li>
+</ul>
+
+<h5>Event Binding</h5>
+
+<code><pre> &lt;element(event) = "function()"></pre></code>
+<button class="btn btn-primary" (click) = "increment()">Click Me!</button> {{count}}
+
+
+<h5 [style.background-color] = "colorProp">Property Binding</h5>
+This allows us to apply a property to a DOM element dynamically.
+There are many types of property binding. 
+<code><pre> &lt;element[property] = "variable"></pre></code>
+
+<h5>Two-way Data Binding</h5>
+So far, our data bindings have bound either our template to our
+typescript(HTML -> TS = event binding), or our typescript to our HTML 
+(TS --> HTML = property pinding and template expressions). But how
+can we establish a relationship that goes both ways between template
+and TS. We want to no longer hae to obtain data from input fields values
+we simplywant out input fields to represent some data. we do this with something called
+a 'Directive', a special one at that.
+out @NgModel needs to import the FormsModule
+<br>
+<input type="text" [(ngModel)] = "name">
+<input type="color" [(ngModel)] = "colorProp">
+
+<br><hr><br>

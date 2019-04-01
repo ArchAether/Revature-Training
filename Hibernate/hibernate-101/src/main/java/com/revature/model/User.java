@@ -1,15 +1,21 @@
 package com.revature.model;
 
 
+import java.util.HashSet;
+import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
-
-import org.apache.log4j.Logger;
 
 @Entity
 @Table(name="BLOG_USER")
@@ -26,6 +32,13 @@ public class User {
 	
 	@Column(nullable = false)
 	private String password;
+	
+	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@JoinTable(name  = "FOLLOWING",
+	joinColumns = @JoinColumn(name = "USER_ID"),
+	inverseJoinColumns = @JoinColumn(name = "FOLLOWS"))
+	private Set<User> following = new HashSet<User>();
+	
 	
 	public User() {
 		

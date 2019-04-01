@@ -5,6 +5,8 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+import com.revature.data.FoodDao;
+import com.revature.model.TestMapping;
 import com.revature.model.User;
 import com.revature.util.ConnectionUtil;
 
@@ -12,10 +14,10 @@ public class ExploringHibernate {
 
 	static ConnectionUtil util = ConnectionUtil.getInstance();
 	final static Logger log = Logger.getLogger(ExploringHibernate.class);
+	static FoodDao foodDao = new FoodDao();
 	
 	public static void main(String[] args) {
-
-		merge();
+		System.out.println(saveFood("ribeyes", "great steak"));
 	}
 	static User save() {
 		User u = new User("Poo Bear", "Hibernates!");				//transient
@@ -120,4 +122,7 @@ public class ExploringHibernate {
 		return u;
 	}
 	
+static TestMapping saveFood(String foodName, String testData) {
+	return foodDao.addFood(foodName, testData);
+}
 }

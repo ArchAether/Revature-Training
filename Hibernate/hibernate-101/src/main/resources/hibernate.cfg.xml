@@ -19,11 +19,17 @@
 		<property name = "format_sql">true</property>
 	
 	<!-- Create/update ours schema -->
-		<property name = "hibernate.hbm2ddl.auto">create</property>
+		<property name = "hibernate.hbm2ddl.auto">update</property>
+		
+		<!-- 		<property name = "hibernate.hbm2ddl.auto">create</property>
+						To Create
+		
+		 -->
 	<!-- Hibernate mapping to Data Definition language -->
 	
 	<!-- Must indicate which classes will be mapped as entities here -->
 	<mapping class = "com.revature.model.User"/>
+	<mapping resource = "TestMapping.hbm.xml"/>
 	
 	</session-factory>
 	
